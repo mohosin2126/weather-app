@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import png from '../public/WeatherIcons.gif';
 import Weather from "./components/weather/index.jsx";
 import Location from "./components/location/index.jsx";
-
+import bg from"../public/HD-wallpaper-sky-clouds-sky-clouds-nature.jpg"
 function App() {
     const [loading, setLoading] = useState(true);
 
@@ -18,12 +18,13 @@ function App() {
 
     return (
         <div
-            className={` flex justify-center items-center bg-cover bg-center bg-no-repeat ${
+            className={`lg:h-screen flex justify-center items-center bg-cover bg-center bg-no-repeat ${
                 loading ? '' : 'lg:h-screen w-full flex-col lg:flex-row gap-4 py-8 lg:py-0'
             }`}
             style={{
-                backgroundImage: "url('../public/HD-wallpaper-sky-clouds-sky-clouds-nature.jpg')"
+                backgroundImage: `url(${bg})`
             }}
+
         >
             {loading ? (
                 <div className="w-[350px] flex flex-col items-center bg-white bg-opacity-15 border-2 border-white border-opacity-20 backdrop-blur-lg h-[555px] rounded-2xl p-5 font-sans">
@@ -38,7 +39,7 @@ function App() {
                     </div>
                 </div>
             ) : (
-                <div className="lg:h-screen md:font-light w-full flex flex-col lg:flex-row justify-center items-center gap-4 py-8 lg:py-0">
+                <div className="lg:h-screen md:font-light w-full h-full flex flex-col lg:flex-row justify-center items-center gap-4 py-8 lg:py-0">
                     <Location />
                     <Weather />
                 </div>
