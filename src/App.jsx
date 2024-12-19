@@ -1,6 +1,7 @@
 import  { useState, useEffect } from 'react';
 import png from '../public/WeatherIcons.gif';
 import Weather from "./components/weather/index.jsx";
+import Location from "./components/location/index.jsx";
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -27,8 +28,10 @@ function App() {
                     </div>
                 </div>
             ) : (
-                <div>
+                <div className='lg:h-[100vh] md:font-light w-full flex flex-col lg:flex-row justify-center items-center gap-4 py-8 lg:py-0'>
+                    <Location/>
                  <Weather/>
+
                 </div>
             )}
         </div>
